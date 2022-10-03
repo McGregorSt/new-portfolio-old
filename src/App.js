@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { ProjectsGrid } from './components/views/ProjectsGrid'
+import styled from 'styled-components'
+import { useState } from 'react'
+
+const StyledAppWrapper = styled.div`
+  width: 85%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const StyledDiv = styled.div``
 
 function App() {
+  const [active, setActive] = useState(false)
+
+  const handleActive = () => {
+    console.log('clip', active)
+    setActive(!active)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <StyledAppWrapper>
+          <ProjectsGrid active={active} handleActive={handleActive} />
+        </StyledAppWrapper>
+  )
 }
 
-export default App;
+export default App
