@@ -1,7 +1,7 @@
 import './App.css'
 import { ProjectsGrid } from './components/views/ProjectsGrid'
 import styled from 'styled-components'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const StyledAppWrapper = styled.div`
   width: 85%;
